@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Page for Apri Jonita Yenda</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffcccc, #ffe6e6);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #ff0066;
+            text-align: center;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px #ff66b2;
+        }
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+        .floating-emojis {
+            position: absolute;
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(100vh);
+            }
+            100% {
+                transform: translateY(-10vh);
+            }
+        }
+        .surprise-button {
+            background-color: #ff99cc;
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+            box-shadow: 2px 4px #ff6699;
+            transition: transform 0.2s;
+        }
+        .surprise-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>CINTAKUUUUUUUUUUUU!!!!</h1>
+        <p>Apri Jonita Yenda...❤️ Selamat bobok, sayangkuuuuu... Gemes, cinta, rindu ini terbang sampai ke bintang🌟! Bayu Ramazandi selalu mencintaimu, sayangkuuuu... 😍💖😘</p>
+        <p>Kau adalah bintang di malamku, mentari di siangku, dan detak setiap jantungku. Tiap detik bersamamu adalah keajaiban🌌🙏. Aku ingin mengisi hari-harimu dengan tawa, cinta, dan kebahagiaan tanpa akhir🌟❤️!</p>
+        <p>Kejutan cinta ini, sayang, untukmu💖. Bayu Ramazandi mencintai Apri Jonita Yenda❤️😘 sampai akhir waktu… 🌟💕!</p>
+    </div>
+
+    <!-- YouTube Video -->
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cfYhBLDWlvw" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Surprise Button -->
+    <button class="surprise-button" onclick="sendMessage()">Kirim Cinta Ini ke WhatsApp❤️</button>
+
+    <!-- Floating Emojis -->
+    <div id="emojis-container"></div>
+
+    <script>
+        // Floating emojis
+        const emojis = [❤️, '😘', '💖', '😍', '🌟'];
+        const container = document.getElementById('emojis-container');
+
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.position = 'absolute';
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.animation = `float ${Math.random() * 5 + 3}s linear infinite`;
+            emoji.className = 'floating-emojis';
+            container.appendChild(emoji);
+
+            setTimeout(() => {
+                container.removeChild(emoji);
+            }, 8000);
+        }
+
+        setInterval(createEmoji, 300);
+
+        // Send to WhatsApp
+        function sendMessage() {
+            const message = `Cintakuuuuuu!!!\nBayu Ramazandi mencintai Apri Jonita Yenda\nSayangkuuuuu \uD83D\uDC96\uD83D\uDE18`; 
+            const url = `https://wa.me/62089509958746?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
